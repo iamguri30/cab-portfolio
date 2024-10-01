@@ -1754,19 +1754,9 @@ a.ui-button:active,
 
 .about-list li {
   position: relative;
-  padding-left: 25px;
   margin-top: 10px;
   font-weight: 500;
-}
-
-.about-list li::before {
-  content: '\f058';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-family: 'font awesome 6 pro';
-  color: var(--theme-color);
-  font-weight: 700;
+  list-style: disc;
 }
 
 @media all and (max-width: 991px) {
