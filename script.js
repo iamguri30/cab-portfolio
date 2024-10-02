@@ -55,43 +55,25 @@
                   $(".navbar").removeClass("fixed-top");
             }
       });
-      let date = new Date().getFullYear();
-      $("#date").html(date);
-      $(".select").niceSelect();
-      $(window).on("load", function () {
-            if ($(".filter-box").children().length > 0) {
-                  $(".filter-box").isotope({
-                        itemSelector: ".filter-item",
-                        masonry: {
-                              columnWidth: 1,
-                        },
-                  });
-                  $(".filter-btns").on("click", "li", function () {
-                        var filterValue = $(this).attr("data-filter");
-                        $(".filter-box").isotope({
-                              filter: filterValue,
-                        });
-                  });
-                  $(".filter-btns li").each(function () {
-                        $(this).on("click", function () {
-                              $(this).siblings("li.active").removeClass("active");
-                              $(this).addClass("active");
-                        });
-                  });
-            }
-      });
-      if ($(".date-picker").length) {
-            $(function () {
-                  $(".date-picker").datepicker();
-            });
-      }
-      if ($(".time-picker").length) {
-            $(function () {
-                  $(".time-picker").timepicker();
-            });
-      }
 })(jQuery);
 
 // Set today's date as the minimum selectable date
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('datePicker').setAttribute('min', today);
+
+document.addEventListener("DOMContentLoaded", function () {
+      const timePicker = document.getElementById("time-picker");
+      const timePicker2 = document.getElementById("time-picker2");
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const currentTime = `${hours}:${minutes}`;
+
+      // Set the min attribute to the current time
+      timePicker.setAttribute("min", currentTime);
+      timePicker2.setAttribute("min", currentTime);
+});
+
+function getcarType(x){
+      document.getElementById("cartypeText").value = x;
+}
