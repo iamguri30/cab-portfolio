@@ -1763,6 +1763,10 @@ a.ui-button:active,
   overflow: hidden;
 }
 
+.car-type {
+  background: linear-gradient(180deg, #000000c7 10%, #000000 100%);
+}
+
 .car-type p{
   font-size: 12px;
 }
