@@ -1765,14 +1765,23 @@ a.ui-button:active,
 
 .car-type {
   background: linear-gradient(180deg, #000000c7 10%, #000000 100%);
+  box-shadow: 0 0 14px 4px rgb(0 0 0 / 7%);
+  min-height: 350px;
+}
+@media only screen and (max-width: 768px){
+  .car-type{
+    min-height: auto;
+  }
+  .car-type a{
+    position: relative !important;
+  }
+}
+.car-type a{
+  background: white;
 }
 
 .car-type p{
   font-size: 12px;
-}
-
-.car-type{
-  box-shadow: 0 0 14px 4px rgb(0 0 0 / 7%);
 }
 
 .service-item {
