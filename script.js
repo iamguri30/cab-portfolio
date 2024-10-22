@@ -57,23 +57,3 @@
       });
 })(jQuery);
 
-// Set today's date as the minimum selectable date
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('datePicker').setAttribute('min', today);
-
-document.addEventListener("DOMContentLoaded", function () {
-      const timePicker = document.getElementById("time-picker");
-      const timePicker2 = document.getElementById("time-picker2");
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, "0");
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-      const currentTime = `${hours}:${minutes}`;
-
-      // Set the min attribute to the current time
-      timePicker.setAttribute("min", currentTime);
-      timePicker2.setAttribute("min", currentTime);
-});
-
-function getcarType(x){
-      document.getElementById("cartypeText").value = x;
-}
